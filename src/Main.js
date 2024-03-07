@@ -1,9 +1,16 @@
 /*TODO - import*/
+import About from './About';
+import Hero from './Hero';
+import Specials from './Specials';
+import Testimonials from './Testimonials';
 
 function Main() {
     return(
         <main>
-            Main imported
+            <Hero />
+            <Specials />
+            <Testimonials />
+            <About />
         </main>
     );
 }
