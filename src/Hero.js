@@ -1,3 +1,5 @@
+import Button from './Button';
+
 const Hero = () => {
     return(
         <section className="hero-section">
@@ -6,7 +8,7 @@ const Hero = () => {
             <p className="description">
                 We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist
             </p>
-            <button type="button" className="reserve-table-button">Reserve a table</button>
+            <Button text={"Reserve a table"} />
         </section>
     );
 }

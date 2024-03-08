@@ -58,7 +58,7 @@ body {
   font-weight: 500;
   color: #EDEFEE;
 }
-.hero-section .reserve-table-button {
+.hero-section button {
   margin: 0 0 35px 20vw;
   width: 200px; height: 50px;
   border-radius: 16px;
@@ -68,4 +68,139 @@ body {
   font-weight: 500;
   color: #333;
   box-shadow: 0 4px 4px rgba(0,0,0,.25);
+}
+.highlights {
+  margin: 0 20vw 0 20vw;
+}
+.highlights-heading {
+  margin-top: 80px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.highlights-heading > h2 {
+  font-family: "Markazi Text", serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #333;
+}
+.highlights-heading button {
+  width: 200px; height: 50px;
+  border-radius: 16px;
+  background-color: #F4CE14;
+  font-family: "Karla", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  box-shadow: 0 4px 4px rgba(0,0,0,.25);
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.card {
+  padding-bottom: 1vw;
+  width: 18vw;
+  background-color: #EDEFEE;
+  display: grid;
+  grid-template-areas: "card-image" "card-title" "card-copy" "card-cta";
+  grid-template-rows: 12vw 4vw 1fr 18px;
+}
+.card .card-image {
+  grid-area: card-image;
+  width: 18vw; height: 12vw;
+  margin-bottom: 40px;
+}
+.card .card-title {
+  grid-area: card-title;
+  margin: 3vw 2vw 2vw 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Karla", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+.card .card-title strong {
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #EE9972;
+}
+.card .card-copy {
+  grid-area: card-copy;
+  margin: 2vw  2vw 5vw 1vw;
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+}
+.card .card-cta {
+  grid-area: card-cta;
+  margin: 0 2vw 0 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Karla", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+}
+
+.testimonials {
+  margin-top: 100px;
+  padding: 3vw 20vw 3vw 20vw;
+  background-color: #495E57;
+}
+.testimonials h2 {
+  margin-bottom: 1.5vw;
+  text-align: center;
+  font-family: "Markazi Text", serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #EDEFEE;
+}
+.testimonials .testimonials-row {
+  display: flex;
+  justify-content: space-evenly;
+}
+.testimonial {
+  width: 10vw;
+  display: grid;
+  grid-template-areas: "user" "photo-rating" "review";
+  grid-template-rows: 3vw 5vw 10vw;
+  background-color: #EDEFEE;
+}
+.testimonial .testimonial-name {
+  grid-area: user;
+  margin: 2vw 0 0 1vw;
+  font-family: "Karla", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+.testimonial-photo-rating {
+  grid-area: photo-rating;
+  margin: 2vw 2vw 0 1vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #EE9972;
+}
+.testimonial .testimonial-photo {
+  width: 4vw; height: 4vw;
+}
+.testimonial .testimonial-review {
+  grid-area: review;
+  margin: 2vw 1vw 0 1vw;
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  color: #333;
 }
