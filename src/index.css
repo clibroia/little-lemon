@@ -14,14 +14,19 @@ body {
 }
 
 .navigation-bar {
-  margin: 50px 20vw 40px 20vw;
-  height: 50px; width: 60vw;
+  margin: 5vh 20vw 4vh 20vw;
+  width: 60vw;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 2.5vw;
 }
+.navigation-bar img {
+  width: 150px; height: 50px;
+}
 .navigation-bar > nav > ul {
   display: flex;
+  flex-wrap: wrap;
   gap: 4vw;
   list-style-type: none;
   font-family: "Karla", sans-serif;
@@ -31,8 +36,9 @@ body {
 }
 
 .hero-section {
+  position: relative;
   background-color: #495E57;
-  padding-top: 50px;
+  padding-top: 5vh;
 }
 .hero-section h1 {
   margin-left: 20vw;
@@ -51,7 +57,7 @@ body {
   color: #EDEFEE;
 }
 .hero-section .description {
-  margin: 40px 0 100px 20vw;
+  margin: 4vh 0 10vh 20vw;
   width: 30vw;
   font-family: "Karla", sans-serif;
   font-size: 18px;
@@ -59,7 +65,7 @@ body {
   color: #EDEFEE;
 }
 .hero-section button {
-  margin: 0 0 35px 20vw;
+  margin: 0 0 3.5vh 20vw;
   width: 200px; height: 50px;
   border-radius: 16px;
   background-color: #F4CE14;
@@ -69,14 +75,51 @@ body {
   color: #333;
   box-shadow: 0 4px 4px rgba(0,0,0,.25);
 }
+.hero-section .welcome-image {
+  position: absolute;
+  top: 2vh; right: 20vw;
+  width: 22vw; height: 33vw;
+  background-image: url(../public/images/welcome-image.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 4px rgba(0,0,0,.25);
+}
+@media screen and (max-width: 768px) {
+  .hero-section .welcome-image {
+    top: 20vh; right: 9vw;
+    width: 33vw; height: 50vw;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 850px) {
+  .hero-section .welcome-image {
+    top: 17vh; right: 9vw;
+    width: 33vw; height: 50vw;
+  }
+}
 .highlights {
   margin: 0 20vw 0 20vw;
 }
+@media screen and (min-width: 769px) and (max-width: 850px) {
+  .highlights {
+    margin: 0 9vw 0 9vw;
+  }
+}
 .highlights-heading {
-  margin-top: 80px;
-  margin-bottom: 50px;
+  margin: 22vh 0 5vh 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+}
+@media screen and (max-width: 850px) {
+  .highlights-heading {
+    margin-top: 9vh;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 850px) {
+  .highlights-heading {
+    margin-left: 11vw;
+  }
 }
 .highlights-heading > h2 {
   font-family: "Markazi Text", serif;
@@ -100,21 +143,40 @@ body {
   justify-content: space-evenly;
 }
 .card {
-  padding-bottom: 1vw;
-  width: 18vw;
+  padding-bottom: max(1vw, 1vh);
+  width: max(18vw, 18vh);
   background-color: #EDEFEE;
+  border-radius: 8px;
   display: grid;
   grid-template-areas: "card-image" "card-title" "card-copy" "card-cta";
-  grid-template-rows: 12vw 4vw 1fr 18px;
+  grid-template-rows: max(12vw, 12vh) max(4vw, 4vh) 1fr 18px;
+}
+@media screen and (max-width: 850px) {
+  .cards-container {
+    flex-wrap: wrap;
+    gap: max(2vw, 2vh);
+  }
+  .card {
+    width: 60vw;
+    grid-template-rows: 36vw max(4vw, 4vh) 1fr 18px;
+  }
 }
 .card .card-image {
   grid-area: card-image;
-  width: 18vw; height: 12vw;
+  width: max(18vw, 18vh); height: max(12vw, 12vh);
   margin-bottom: 40px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+@media screen and (max-width: 850px) {
+  .card .card-image {
+    width: 60vw;
+    height: 36vw;
+  }
 }
 .card .card-title {
   grid-area: card-title;
-  margin: 3vw 2vw 2vw 1vw;
+  margin: max(3vw, 3vh) 2vw max(2vw, 2vh) 1vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -131,7 +193,7 @@ body {
 }
 .card .card-copy {
   grid-area: card-copy;
-  margin: 2vw  2vw 5vw 1vw;
+  margin: max(2vw, 2vh) 2vw max(5vw, 5vh) 1vw;
   font-family: "Karla", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -150,12 +212,12 @@ body {
 }
 
 .testimonials {
-  margin-top: 100px;
-  padding: 3vw 20vw 3vw 20vw;
+  margin-top: 10vh;
+  padding: max(3vw, 3vh) 20vw max(3vw, 3vh) 20vw;
   background-color: #495E57;
 }
 .testimonials h2 {
-  margin-bottom: 1.5vw;
+  margin-bottom: max(1.5vw, 1.5vh);
   text-align: center;
   font-family: "Markazi Text", serif;
   font-size: 40px;
@@ -166,16 +228,29 @@ body {
   display: flex;
   justify-content: space-evenly;
 }
+@media screen and (max-width: 850px) {
+  .testimonials .testimonials-row {
+    flex-wrap: wrap;
+    gap: max(2vw, 2vh);
+  }
+}
 .testimonial {
-  width: 10vw;
+  width: max(10vw, 10vh);
   display: grid;
   grid-template-areas: "user" "photo-rating" "review";
-  grid-template-rows: 3vw 5vw 10vw;
+  grid-template-rows: max(3vw, 3vh) max(5vw, 5vh) max(10vw, 10vh);
   background-color: #EDEFEE;
+  border-radius: 8px;
+}
+@media screen and (max-width: 850px) {
+  .testimonial {
+    width: max(20vw, 20vh);
+    grid-template-rows: max(5vw, 5vh) max(7vw, 7vh) max(12vw, 12vh);
+  }
 }
 .testimonial .testimonial-name {
   grid-area: user;
-  margin: 2vw 0 0 1vw;
+  margin: max(2vw, 2vh) 0 0 1vw;
   font-family: "Karla", sans-serif;
   font-size: 18px;
   font-weight: 700;
@@ -183,7 +258,7 @@ body {
 }
 .testimonial-photo-rating {
   grid-area: photo-rating;
-  margin: 2vw 2vw 0 1vw;
+  margin: max(2vw, 2vh) 2vw 0 1vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -193,14 +268,155 @@ body {
   color: #EE9972;
 }
 .testimonial .testimonial-photo {
-  width: 4vw; height: 4vw;
+  width: max(4vw, 4vh); height: max(4vw, 4vh);
+}
+@media screen and (max-width: 850px) {
+  .testimonial .testimonial-name {
+    margin: max(2vw, 2vh) 0 0 3vw;
+  }
+  .testimonial-photo-rating {
+    margin: max(2vw, 2vh) 5vw 0 3vw;
+  }
+  .testimonial .testimonial-photo {
+    width: max(8vw, 8vh); height: max(8vw, 8vh);
+  }
 }
 .testimonial .testimonial-review {
   grid-area: review;
-  margin: 2vw 1vw 0 1vw;
+  margin: max(2vw, 2vh) 1vw 0 1vw;
   font-family: "Karla", sans-serif;
   font-size: 16px;
   font-weight: 400;
   font-style: italic;
   color: #333;
+}
+@media screen and (max-width: 850px) {
+  .testimonial .testimonial-review {
+    margin: max(3vw, 3vh) 1vw 0 3vw;
+  }
+}
+
+.about {
+  display: flex;
+  gap: 7vw;
+}
+.about .text > h1 {
+  margin: max(8vw, 8vh) 0 0 20vw;
+  font-family: "Markazi Text", serif;
+  font-size: 64px;
+  font-weight: 500;
+  color: #333;
+}
+.about .text > h2 {
+  margin-left: 20vw;
+  font-family: "Markazi Text", serif;
+  font-size: 40px;
+  font-weight: 400;
+  color: #333;
+}
+.about .text > p {
+  margin: max(4vw, 4vh) 0 0 20vw;
+  width: 30vw;
+  font-family: "Karla", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+}
+@media screen and (max-width: 850px) {
+  .about .text > p {
+    width: 50vw;
+    margin: max(4vw, 4vh) 0 max(4vw, 4vh) 20vw;
+  }
+}
+.img-container {
+  position: relative;
+  width: 25vw; height: 33vw;
+  margin-top: max(8vw, 8vh);
+}
+.img-container > .rectangle:first-child {
+  width: 13vw; height: 17vw;
+  position: absolute;
+  top: 14vw;
+  background-image: url("../public/images/Mario\ and\ Adrian\ B.jpg");
+  background-size: cover;
+  background-position: center;
+  border: 5px solid #495E57;
+  border-radius: 8px;
+}
+.img-container > .rectangle:nth-child(2) {
+  width: 13vw; height: 17vw;
+  position: absolute;
+  left: 9vw;
+  background-image: url("../public/images/Mario\ and\ Adrian\ A.jpg");
+  background-size: cover;
+  background-position: center;
+  border: 5px solid #FBDABB;
+  border-radius: 8px;
+}
+@media screen and (max-width: 768px) {
+  .img-container > .rectangle:first-child {
+    width: 20vw; height: 25vw;
+    top: 23vw; right: 12vw;
+    border: 3px solid #495E57;
+  }
+  .img-container > .rectangle:nth-child(2) {
+    width: 20vw; height: 25vw;
+    top: 7vw; left: -3vw;
+    border: 3px solid #FBDABB;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 850px) {
+  .img-container > .rectangle:first-child {
+    right: 16vw;
+  }
+  .img-container > .rectangle:nth-child(2) {
+    left: 2vw;
+  }
+}
+
+footer {
+  padding: max(5vw, 5vh) 0 max(5vw, 5vh) 20vw;
+  background-color: #495E57;
+  display: flex;
+  gap: 9vw;
+}
+@media screen and (max-width: 768px) {
+  footer {
+    padding-left: 5vw;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 850px) {
+  footer {
+    padding-right: 9vw;
+  }
+}
+footer .logo-container {
+  display: flex;
+  align-items: center;
+}
+footer h3 {
+  margin-bottom: 3vw;
+  font-family: "Karla", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #EDEFEE;
+}
+footer ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #EDEFEE;
+}
+@media screen and (max-width: 768px) {
+  footer ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5vw;
+  }
 }

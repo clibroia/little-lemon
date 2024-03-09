@@ -9,6 +9,8 @@ const Hero = () => {
                 We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist
             </p>
             <Button text={"Reserve a table"} />
+            <div className="welcome-image">
+            </div>
         </section>
     );
 }
