@@ -5,8 +5,11 @@ const Specials = () => {
     return(
         <section className="highlights">
             <div className="highlights-heading">
-                <h2>SPECIALS</h2>
-                <Button text={"On the menu"}/>
+                <h2 className="highlights-h2">SPECIALS</h2>
+                <Button
+                    text={"On the menu"}
+                    class={"highlights-button"}
+                />
             </div>
             <div className="cards-container">
                 <Card

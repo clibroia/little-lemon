@@ -8,7 +8,7 @@ const Card = (props) => {
             />
             <div className="card-title">
                 <h3>{props.title}</h3>
-                <strong>{props.amount}</strong>
+                <strong className="card-amount">{props.amount}</strong>
             </div>
             <p className="card-copy">{props.copy}</p>
             <div className="card-cta">

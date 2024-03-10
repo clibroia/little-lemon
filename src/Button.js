@@ -1,6 +1,9 @@
 const Button = (props) => {
     return(
-        <button type="button">
+        <button
+            type="button"
+            className={props.class}
+        >
             {props.text}
         </button>
     );

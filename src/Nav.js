@@ -3,8 +3,8 @@
 function Nav() {
     return(
         <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
+            <ul className="header-menu">
+                <li><a href="https://google.it">Home</a></li>
                 <li>About</li>
                 <li>Menu</li>
                 <li><a href="#">Reservations</a></li>

@@ -3,7 +3,7 @@ import Testimonial from "./Testimonial";
 const Testimonials = () => {
     return(
         <section className="testimonials">
-            <h2>Testimonials</h2>
+            <h2 className="testimonials-h2">Testimonials</h2>
             <div className="testimonials-row">
                 <Testimonial
                     user={{name: "Lisa", photo: `${window.location.origin}/images/lisa.jpg`}}
