@@ -12,11 +12,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-a:link, a:visited {
+.nav-item:link, .nav-item:visited {
   text-decoration: none;
   color: inherit;
 }
-a:hover {
+.nav-item:hover {
   text-decoration: underline;
 }
 

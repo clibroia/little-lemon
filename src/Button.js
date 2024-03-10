@@ -1,11 +1,15 @@
+import { Link } from "react-router-dom";
+
 const Button = (props) => {
     return(
-        <button
-            type="button"
-            className={props.class}
-        >
-            {props.text}
-        </button>
+        <Link to={props.pageLink}>
+            <button
+                type="button"
+                className={props.class}
+            >
+                {props.text}
+            </button>
+        </Link>
     );
 }
 

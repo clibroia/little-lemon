@@ -1,13 +1,14 @@
-/*TODO - import*/
+import React from 'react';
+import {Link} from 'react-router-dom';
 
 function Nav() {
     return(
         <nav>
             <ul className="header-menu">
-                <li><a href="https://google.it">Home</a></li>
+                <li><Link to="/" className="nav-item">Home</Link></li>
                 <li>About</li>
                 <li>Menu</li>
-                <li><a href="#">Reservations</a></li>
+                <li><Link to="/booking-page" className="nav-item">Reservations</Link></li>
                 <li>Order Online</li>
                 <li>Login</li>
             </ul>

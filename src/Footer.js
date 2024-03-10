@@ -1,4 +1,4 @@
-/*TODO - import*/
+import {Link} from 'react-router-dom';
 
 function Footer() {
     return(
@@ -9,10 +9,10 @@ function Footer() {
             <div className="navigation">
                 <h3 className="footer-heading">Navigation</h3>
                 <ul className="footer-menu">
-                    <li><a href="#">Home</a></li>
+                    <li><Link to="/" className="nav-item">Home</Link></li>
                     <li>About</li>
                     <li>Menu</li>
-                    <li><a href="#">Reservations</a></li>
+                    <li><Link to="/booking-page" className="nav-item">Reservations</Link></li>
                     <li>Order Online</li>
                     <li>Login</li>
                 </ul>

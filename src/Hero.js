@@ -11,6 +11,7 @@ const Hero = () => {
             <Button
                 text={"Reserve a table"}
                 class={"hero-button"}
+                pageLink={"/booking-page"}
             />
             <div className="welcome-image">
             </div>
