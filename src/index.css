@@ -286,6 +286,117 @@ footer {
   color: #EDEFEE;
 }
 
+/*BookingHero.js*/
+.booking-hero {
+  display: flex;
+  gap: 7vw;
+}
+.booking-hero-title {
+  width: fit-content;
+  margin-left: 20vw;
+  font: 500 64px "Markazi Text", serif;
+  color: #EDEFEE;
+}
+.booking-hero-title + .hero-description {
+  margin-top: 8vh;
+  padding-bottom: 12vh;
+}
+.booking-hero-img-container {
+  position: relative;
+  margin-top: 2vw;
+}
+.booking-hero-image:first-child {
+  width: 15vw;
+  height: 17vw;
+  position: absolute;
+  top: 8vw;
+  left: 8vw;
+  z-index: 1;
+  background: center/cover url("../public/images/booking-image\ A.jpg");
+}
+.booking-hero-image:nth-child(2) {
+  width: 15vw;
+  height: 17vw;
+  position: absolute;
+  background: center/cover url("../public/images/booking-image\ B.jpg");
+}
+
+/*BookingForm.js*/
+.res-form {
+  width: 56vw;
+  padding: 6vw 0 4vw 20vw;
+  display: flex;
+  flex-direction: column;
+  gap: 3vw;
+  font: 400 16px "Karla", sans-serif;
+  color: #333;
+}
+.res-form input {
+  font: 400 16px "Karla", sans-serif;
+  color: #333;
+  border-radius: 6px;
+}
+.res-form select {
+  font: 400 16px "Karla", sans-serif;
+  text-align: center;
+  background-color: #EDEFEE;
+  color: #333;
+  border-radius: 6px;
+}
+.form-user {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+.form-user input, .form-res-details input, .form-res-details select {
+  height: 2vw;
+}
+.form-user-name, .form-user-email, .form-res-date, .form-res-time, .form-res-diners, .form-res-occasion, .form-res-seating, .form-comments {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.form-res-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+.form-res-date-time {
+  display: flex;
+  gap: 7vw;
+}
+.form-res-diners {
+  width: fit-content;
+}
+.form-res-occasion {
+  width: fit-content;
+}
+.seating-button-container {
+  display: flex;
+  gap: 4vw;
+}
+.seating-button-container button {
+  width: 10vw;
+  height: 2vw;
+  font: 400 16px "Karla", sans-serif;
+  text-align: center;
+  background-color: #EDEFEE;
+  color: #333;
+  border-radius: 6px;
+}
+.form-comments textarea {
+  resize: none;
+  height: 5vw;
+}
+.form-submit {
+  display: flex;
+  justify-content: flex-end;
+}
+input[type="submit"] {
+  border-radius: 16px;
+  font: 500 18px "Karla", sans-serif;
+}
+
 @media screen and (max-width: 992px) {
   /*Hero.js*/
   .welcome-image {
