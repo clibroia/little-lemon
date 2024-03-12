@@ -331,51 +331,38 @@ footer {
   font: 400 16px "Karla", sans-serif;
   color: #333;
 }
-.res-form input {
+.res-form input, .res-form select {
+  height: 2vw;
   font: 400 16px "Karla", sans-serif;
   color: #333;
   border-radius: 6px;
 }
 .res-form select {
-  font: 400 16px "Karla", sans-serif;
   text-align: center;
   background-color: #EDEFEE;
-  color: #333;
-  border-radius: 6px;
 }
-.form-user {
+.form-group {
   display: flex;
   flex-direction: column;
   gap: 1vw;
 }
-.form-user input, .form-res-details input, .form-res-details select {
-  height: 2vw;
-}
-.form-user-name, .form-user-email, .form-res-date, .form-res-time, .form-res-diners, .form-res-occasion, .form-res-seating, .form-comments {
+.form-label-data {
   display: flex;
   flex-direction: column;
   gap: 3px;
-}
-.form-res-details {
-  display: flex;
-  flex-direction: column;
-  gap: 1vw;
 }
 .form-res-date-time {
   display: flex;
   gap: 7vw;
 }
-.form-res-diners {
-  width: fit-content;
-}
-.form-res-occasion {
+.form-fit-content {
   width: fit-content;
 }
 .seating-button-container {
   display: flex;
   gap: 4vw;
 }
-.seating-button-container button {
+.seating-button {
   width: 10vw;
   height: 2vw;
   font: 400 16px "Karla", sans-serif;
@@ -384,7 +371,7 @@ footer {
   color: #333;
   border-radius: 6px;
 }
-.form-comments textarea {
+.form-label-data textarea {
   resize: none;
   height: 5vw;
 }
@@ -393,6 +380,7 @@ footer {
   justify-content: flex-end;
 }
 input[type="submit"] {
+  height: 50px;
   border-radius: 16px;
   font: 500 18px "Karla", sans-serif;
 }
