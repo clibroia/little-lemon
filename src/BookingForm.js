@@ -20,26 +20,104 @@ const BookingForm = () => {
         {label:"21:30", value:"21:30"},
         {label:"22:00", value:"22:00"},
     ];
-    const [name, setName] = useState("");
+    const [bookingData, setBookingData] = useState({
+        name:"",
+        email:"",
+        date:"",
+        time:"",
+        occasion:"",
+        diners:"1",
+        seating:"",
+        comment:""
+    });
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(bookingData);
+    }
     const nameChange = (e) => {
-        setName(e.target.value);
-        console.log(e.target.value);
+        setBookingData(prevState => {
+            return({
+                ...prevState,
+                name: e.target.value
+            });
+        });
+    }
+    const emailChange = (e) => {
+        setBookingData(prevState => {
+            return({
+                ...prevState,
+                email: e.target.value
+            });
+        });
+    }
+    const dateChange = (e) => {
+        setBookingData(prevState => {
+            return({
+                ...prevState,
+                date: e.target.value
+            });
+        });
+    }
+    const timeChange = (e) => {
+        setBookingData(prevState => {
+            return({
+                ...prevState,
+                time: e.target.value
+            });
+        });
+    }
+    const occasionChange = (e) => {
+        setBookingData(prevState => {
+            return({
+                ...prevState,
+                occasion: e.target.value
+            });
+        });
+    }
+    const dinersChange = (e) => {
+        setBookingData(prevState => {
+            return({
+                ...prevState,
+                diners: e.target.value
+            });
+        });
+    }
+    const handleSelection = (e) => {
+        setBookingData(prevState => {
+            return({
+                ...prevState,
+                seating: e.target.value
+            });
+        });
+    }
+    const commentChange = (e) => {
+        setBookingData(prevState => {
+            return({
+                ...prevState,
+                comment: e.target.value
+            });
+        });
     }
     return(
         <>
-            <form className="res-form">
+            <form
+            className="res-form"
+            onSubmit={handleSubmit}
+            >
                 <div className="form-group">
                     <LabelInput
                     labelText={"Name"}
                     inputId={"user-name"}
                     inputType={"text"}
                     handleChange={nameChange}
-                    inputValue={name}
+                    inputValue={bookingData.name}
                     />
                     <LabelInput
                     labelText={"Email"}
                     inputId={"user-email"}
                     inputType={"email"}
+                    handleChange={emailChange}
+                    inputValue={bookingData.email}
                     />
                 </div>
                 <div className="form-group">
@@ -48,12 +126,16 @@ const BookingForm = () => {
                         labelText={"Date"}
                         inputId={"res-date"}
                         inputType={"date"}
+                        handleChange={dateChange}
+                        inputValue={bookingData.date}
                         />
                         <LabelSelect
                         divClassName={"form-label-data"}
                         selectId={"res-time"}
                         labelText={"Time"}
                         options={times}
+                        selectedValue={bookingData.time}
+                        handleChange={timeChange}
                         />
                     </div>
                     <LabelNumber
@@ -64,16 +146,25 @@ const BookingForm = () => {
                     inputPlaceholder={"1"}
                     inputMin={"1"}
                     inputMax={"15"}
+                    numberValue={bookingData.diners}
+                    handleChange={dinersChange}
                     />
                     <LabelSelect
                     divClassName={"form-label-data form-fit-content"}
                     selectId={"res-occasion"}
                     labelText={"Occasion"}
                     options={occasions}
+                    selectedValue={bookingData.occasion}
+                    handleChange={occasionChange}
                     />
-                    <SeatingOption />
+                    <SeatingOption
+                    handleSeatingSelection={handleSelection}
+                    />
                 </div>
-                <CommentArea />
+                <CommentArea
+                areaValue={bookingData.comment}
+                handleChange={commentChange}
+                />
                 <div className="form-submit">
                     <input type="submit" value="Reserve a table" className="hero-button"/>
                 </div>

@@ -371,6 +371,10 @@ footer {
   color: #333;
   border-radius: 6px;
 }
+.seating-button.seating-button-clicked {
+  background-color: #495E57;
+  color: #EDEFEE;
+}
 .form-label-data textarea {
   resize: none;
   height: 5vw;

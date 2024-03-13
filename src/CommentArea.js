@@ -1,4 +1,4 @@
-const CommentArea = () => {
+const CommentArea = (props) => {
     const divClassName="form-label-data";
     const areaId="res-comments";
     const labelText="Additional comments";
@@ -9,8 +9,10 @@ const CommentArea = () => {
                 {labelText}
             </label>
             <textarea
-                id={areaId}
-                maxLength={areaMaxLength}
+            id={areaId}
+            maxLength={areaMaxLength}
+            value={props.areaValue}
+            onChange={props.handleChange}
             ></textarea>
         </div>
     );

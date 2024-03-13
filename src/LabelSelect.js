@@ -4,7 +4,11 @@ const LabelSelect = (props) => {
             <label htmlFor={props.selectId}>
                 {props.labelText}
             </label>
-            <select id={props.selectId}>
+            <select
+            id={props.selectId}
+            value={props.selectedValue}
+            onChange={props.handleChange}
+            >
                 {props.options.map(option => {
                     return(
                         <option
