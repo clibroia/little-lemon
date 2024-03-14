@@ -12,6 +12,7 @@ const LabelNumber = (props) => {
             max={props.inputMax}
             value={props.numberValue}
             onChange={props.handleChange}
+            aria-required={props.required}
             />
         </div>
     );

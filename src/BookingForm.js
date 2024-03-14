@@ -1,103 +1,22 @@
-import { useState } from "react";
 import CommentArea from "./CommentArea";
 import LabelInput from "./LabelInput";
 import LabelNumber from "./LabelNumber";
 import LabelSelect from "./LabelSelect";
 import SeatingOption from "./SeatingOption";
 
-const BookingForm = () => {
-    const occasions = [
-        {label:"Anniversary", value:"anniversary"},
-        {label:"Birthday", value:"birthday"},
-        {label:"Business", value:"business"},
-        {label:"Engagement", value:"engagement"}
-    ];
-    const times = [
-        {label:"19:30", value:"19:30"},
-        {label:"20:00", value:"20:00"},
-        {label:"20:30", value:"20:30"},
-        {label:"21:00", value:"21:00"},
-        {label:"21:30", value:"21:30"},
-        {label:"22:00", value:"22:00"},
-    ];
-    const [bookingData, setBookingData] = useState({
-        name:"",
-        email:"",
-        date:"",
-        time:"",
-        occasion:"",
-        diners:"1",
-        seating:"",
-        comment:""
-    });
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(bookingData);
-    }
-    const nameChange = (e) => {
-        setBookingData(prevState => {
-            return({
-                ...prevState,
-                name: e.target.value
-            });
-        });
-    }
-    const emailChange = (e) => {
-        setBookingData(prevState => {
-            return({
-                ...prevState,
-                email: e.target.value
-            });
-        });
-    }
-    const dateChange = (e) => {
-        setBookingData(prevState => {
-            return({
-                ...prevState,
-                date: e.target.value
-            });
-        });
-    }
-    const timeChange = (e) => {
-        setBookingData(prevState => {
-            return({
-                ...prevState,
-                time: e.target.value
-            });
-        });
-    }
-    const occasionChange = (e) => {
-        setBookingData(prevState => {
-            return({
-                ...prevState,
-                occasion: e.target.value
-            });
-        });
-    }
-    const dinersChange = (e) => {
-        setBookingData(prevState => {
-            return({
-                ...prevState,
-                diners: e.target.value
-            });
-        });
-    }
-    const handleSelection = (e) => {
-        setBookingData(prevState => {
-            return({
-                ...prevState,
-                seating: e.target.value
-            });
-        });
-    }
-    const commentChange = (e) => {
-        setBookingData(prevState => {
-            return({
-                ...prevState,
-                comment: e.target.value
-            });
-        });
-    }
+const BookingForm = ({
+    occasions,
+    times,
+    bookingData,
+    handleSubmit,
+    nameChange,
+    emailChange,
+    dateChange,
+    timeChange,
+    occasionChange,
+    dinersChange,
+    handleSelection,
+    commentChange}) => {
     return(
         <>
             <form
@@ -111,6 +30,7 @@ const BookingForm = () => {
                     inputType={"text"}
                     handleChange={nameChange}
                     inputValue={bookingData.name}
+                    required={"true"}
                     />
                     <LabelInput
                     labelText={"Email"}
@@ -118,6 +38,7 @@ const BookingForm = () => {
                     inputType={"email"}
                     handleChange={emailChange}
                     inputValue={bookingData.email}
+                    required={"true"}
                     />
                 </div>
                 <div className="form-group">
@@ -128,6 +49,7 @@ const BookingForm = () => {
                         inputType={"date"}
                         handleChange={dateChange}
                         inputValue={bookingData.date}
+                        required={"true"}
                         />
                         <LabelSelect
                         divClassName={"form-label-data"}
@@ -136,6 +58,7 @@ const BookingForm = () => {
                         options={times}
                         selectedValue={bookingData.time}
                         handleChange={timeChange}
+                        required={"true"}
                         />
                     </div>
                     <LabelNumber
@@ -148,6 +71,7 @@ const BookingForm = () => {
                     inputMax={"15"}
                     numberValue={bookingData.diners}
                     handleChange={dinersChange}
+                    required={"true"}
                     />
                     <LabelSelect
                     divClassName={"form-label-data form-fit-content"}
@@ -156,6 +80,7 @@ const BookingForm = () => {
                     options={occasions}
                     selectedValue={bookingData.occasion}
                     handleChange={occasionChange}
+                    required={"false"}
                     />
                     <SeatingOption
                     handleSeatingSelection={handleSelection}
@@ -164,6 +89,7 @@ const BookingForm = () => {
                 <CommentArea
                 areaValue={bookingData.comment}
                 handleChange={commentChange}
+                required={"false"}
                 />
                 <div className="form-submit">
                     <input type="submit" value="Reserve a table" className="hero-button"/>

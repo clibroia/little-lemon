@@ -10,7 +10,7 @@ const SeatingOption = ({handleSeatingSelection}) => {
         {name:"seating", value:"inside", type:"button", label:"Inside"},
         {name:"seating", value:"outside", type:"button", label:"Outside"}
     ];
-    const [insideButtonClicked, setInsideButtonClicked] = useState(false);
+    const [insideButtonClicked, setInsideButtonClicked] = useState(true);
     const insideButtonHandleClick = (e) => {
         setInsideButtonClicked(true);
         setOutsideButtonClicked(false);

@@ -13,6 +13,7 @@ const CommentArea = (props) => {
             maxLength={areaMaxLength}
             value={props.areaValue}
             onChange={props.handleChange}
+            aria-required={props.required}
             ></textarea>
         </div>
     );
