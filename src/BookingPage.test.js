@@ -1,0 +1,36 @@
+import {render, fireEvent, screen} from '@testing-library/react';
+import { MemoryRouter, Routes, Route } from 'react-router-dom';
+import BookingPage from './BookingPage';
+
+test("Initializing times", () => {
+    render(
+        <MemoryRouter initialEntries={['/booking-page']}>
+            <Routes>
+                <Route path="/booking-page" element={<BookingPage />} />
+            </Routes>
+        </MemoryRouter>
+    );
+    const initialTimes = ["--:--", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00"];
+    initialTimes.forEach(time => {
+        const renderedTime = screen.getByText(time);
+        expect(renderedTime).toBeInTheDocument();
+    });
+});
+
+test("Updating times", () => {
+    render(
+        <MemoryRouter initialEntries={['/booking-page']}>
+            <Routes>
+                <Route path="/booking-page" element={<BookingPage />} />
+            </Routes>
+        </MemoryRouter>
+    );
+    const initialTimes = ["--:--", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00"];
+    const inputDate = screen.getByLabelText(/Date/);
+    fireEvent.change(inputDate, {target: {value: '2024-03-16'}});
+    expect(inputDate).toHaveDisplayValue('2024-03-16');
+    initialTimes.forEach(time => {
+        const renderedTime = screen.getByText(time);
+        expect(renderedTime).toBeInTheDocument();
+    });
+});

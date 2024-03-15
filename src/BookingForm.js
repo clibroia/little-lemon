@@ -10,93 +10,111 @@ const BookingForm = ({
     bookingData,
     handleSubmit,
     nameChange,
+    emailBlur,
     emailChange,
+    dateBlur,
     dateChange,
+    timeBlur,
     timeChange,
+    occasionBlur,
     occasionChange,
     dinersChange,
     handleSelection,
     commentChange}) => {
-    return(
-        <>
-            <form
-            className="res-form"
-            onSubmit={handleSubmit}
-            >
-                <div className="form-group">
-                    <LabelInput
-                    labelText={"Name"}
-                    inputId={"user-name"}
-                    inputType={"text"}
-                    handleChange={nameChange}
-                    inputValue={bookingData.name}
-                    required={"true"}
-                    />
-                    <LabelInput
-                    labelText={"Email"}
-                    inputId={"user-email"}
-                    inputType={"email"}
-                    handleChange={emailChange}
-                    inputValue={bookingData.email}
-                    required={"true"}
-                    />
-                </div>
-                <div className="form-group">
-                    <div className="form-res-date-time">
+        return(
+            <>
+                <form
+                className="res-form"
+                onSubmit={handleSubmit}
+                >
+                    <div className="form-group">
                         <LabelInput
-                        labelText={"Date"}
-                        inputId={"res-date"}
-                        inputType={"date"}
-                        handleChange={dateChange}
-                        inputValue={bookingData.date}
+                        labelText={"Name"}
+                        inputId={"user-name"}
+                        inputType={"text"}
+                        handleChange={nameChange}
+                        inputValue={bookingData.name}
+                        required={"true"}
+                        />
+                        <LabelInput
+                        labelText={"Email"}
+                        inputId={"user-email"}
+                        inputType={"email"}
+                        handleChange={emailChange}
+                        handleBlur={emailBlur}
+                        inputValue={bookingData.email.value}
+                        required={"true"}
+                        ariaInvalid={!bookingData.email.valid}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <div className="form-res-date-time">
+                            <LabelInput
+                            labelText={"Date"}
+                            inputId={"res-date"}
+                            inputType={"date"}
+                            handleChange={dateChange}
+                            handleBlur={dateBlur}
+                            inputValue={bookingData.date.value}
+                            required={"true"}
+                            ariaInvalid={!bookingData.date.valid}
+                            />
+                            <LabelSelect
+                            divClassName={"form-label-data"}
+                            selectId={"res-time"}
+                            labelText={"Time"}
+                            options={times}
+                            selectedValue={bookingData.time.value}
+                            handleChange={timeChange}
+                            handleBlur={timeBlur}
+                            required={"true"}
+                            ariaInvalid={!bookingData.time.valid}
+                            />
+                        </div>
+                        <LabelNumber
+                        divClassName={"form-label-data form-fit-content"}
+                        inputId={"res-diners"}
+                        labelText={"Number of Diners"}
+                        inputType={"number"}
+                        inputPlaceholder={"1"}
+                        inputMin={"1"}
+                        inputMax={"15"}
+                        numberValue={bookingData.diners}
+                        handleChange={dinersChange}
                         required={"true"}
                         />
                         <LabelSelect
-                        divClassName={"form-label-data"}
-                        selectId={"res-time"}
-                        labelText={"Time"}
-                        options={times}
-                        selectedValue={bookingData.time}
-                        handleChange={timeChange}
-                        required={"true"}
+                        divClassName={"form-label-data form-fit-content"}
+                        selectId={"res-occasion"}
+                        labelText={"Occasion"}
+                        options={occasions}
+                        selectedValue={bookingData.occasion.value}
+                        handleChange={occasionChange}
+                        handleBlur={occasionBlur}
+                        required={"false"}
+                        ariaInvalid={!bookingData.occasion.valid}
+                        />
+                        <SeatingOption
+                        handleSeatingSelection={handleSelection}
                         />
                     </div>
-                    <LabelNumber
-                    divClassName={"form-label-data form-fit-content"}
-                    inputId={"res-diners"}
-                    labelText={"Number of Diners"}
-                    inputType={"number"}
-                    inputPlaceholder={"1"}
-                    inputMin={"1"}
-                    inputMax={"15"}
-                    numberValue={bookingData.diners}
-                    handleChange={dinersChange}
-                    required={"true"}
-                    />
-                    <LabelSelect
-                    divClassName={"form-label-data form-fit-content"}
-                    selectId={"res-occasion"}
-                    labelText={"Occasion"}
-                    options={occasions}
-                    selectedValue={bookingData.occasion}
-                    handleChange={occasionChange}
+                    <CommentArea
+                    areaValue={bookingData.comment}
+                    handleChange={commentChange}
                     required={"false"}
                     />
-                    <SeatingOption
-                    handleSeatingSelection={handleSelection}
-                    />
-                </div>
-                <CommentArea
-                areaValue={bookingData.comment}
-                handleChange={commentChange}
-                required={"false"}
-                />
-                <div className="form-submit">
-                    <input type="submit" value="Reserve a table" className="hero-button"/>
-                </div>
-            </form>
-        </>
-    );
+                    <div className="form-submit">
+                        <input
+                        type="submit"
+                        value="Reserve a table"
+                        className="hero-button"
+                        aria-disabled={bookingData.submitDisabled}
+                        disabled={bookingData.submitDisabled}
+                        />
+                    </div>
+                </form>
+            </>
+        );
 }
 
 export default BookingForm;

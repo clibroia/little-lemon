@@ -9,6 +9,8 @@ const LabelSelect = (props) => {
             value={props.selectedValue}
             onChange={props.handleChange}
             aria-required={props.required}
+            onBlur={props.handleBlur}
+            aria-invalid={props.ariaInvalid}
             >
                 {props.options.map(option => {
                     return(
