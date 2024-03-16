@@ -1,5 +1,5 @@
 import React from 'react';
-import { useReducer } from 'react';
+import { useReducer, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import BookingHero from './BookingHero';
@@ -7,6 +7,19 @@ import BookingForm from './BookingForm';
 import { bookingDataInitialState, bookingDataReducer } from './bookingDataReducer';
 
 const BookingPage = () => {
+    useEffect(() => {
+        fetch('https://raw.githubusercontent.com/clibroia/little-lemon-API/main/TimeSlotsAPI.js')
+        .then(response => response.text())
+        .then(script => {
+            const scriptElement = document.createElement('script');
+            scriptElement.innerHTML = script;
+            document.head.appendChild(scriptElement);
+        })
+        .catch(error => {
+            throw Error('An error occurred:', error);
+        });
+    },
+    []);
     const occasions = [
         {label:"-", value:"-"},
         {label:"Anniversary", value:"anniversary"},
@@ -94,7 +107,15 @@ const BookingPage = () => {
     const timesReducer = (times, action) => {
         switch(action.type) {
             case 'updateTimes': {
-                return(times);
+                const availableTimes = window.timeSlotsAPI.fetchData(action.value);
+                return(
+                    availableTimes.map(time => {
+                        return({
+                            label: time,
+                            value: time
+                        });
+                    })
+                );
             }
             default: {
                 throw Error('Unknown action: ' + action.type);
@@ -114,17 +135,11 @@ const BookingPage = () => {
     const initializeTimes = () => {
         return(
             [
-                {label:"--:--", value:"--:--"},
-                {label:"19:30", value:"19:30"},
-                {label:"20:00", value:"20:00"},
-                {label:"20:30", value:"20:30"},
-                {label:"21:00", value:"21:00"},
-                {label:"21:30", value:"21:30"},
-                {label:"22:00", value:"22:00"},
+                {label: '--:--', value: '--:--'}
             ]
         );
     }
-    const [times, dispatchDate] = useReducer(timesReducer, initializeTimes());
+    const [times, dispatchDate] = useReducer(timesReducer, undefined, initializeTimes);
     return(
         <>
             <Header />
