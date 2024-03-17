@@ -5,10 +5,23 @@ import Footer from './Footer';
 import BookingHero from './BookingHero';
 import BookingForm from './BookingForm';
 import { bookingDataInitialState, bookingDataReducer } from './bookingDataReducer';
+import { useNavigate } from 'react-router-dom';
 
 const BookingPage = () => {
+    const navigate = useNavigate();
     useEffect(() => {
-        fetch('https://raw.githubusercontent.com/clibroia/little-lemon-API/main/TimeSlotsAPI.js')
+        fetch('https://raw.githubusercontent.com/clibroia/little-lemon-API/main/timeSlotsAPI.js')
+        .then(response => response.text())
+        .then(script => {
+            const scriptElement = document.createElement('script');
+            scriptElement.innerHTML = script;
+            document.head.appendChild(scriptElement);
+        })
+        .catch(error => {
+            throw Error('An error occurred:', error);
+        });
+
+        fetch('https://raw.githubusercontent.com/clibroia/little-lemon-API/main/submitAPI.js')
         .then(response => response.text())
         .then(script => {
             const scriptElement = document.createElement('script');
@@ -27,9 +40,12 @@ const BookingPage = () => {
         {label:"Business", value:"business"},
         {label:"Engagement", value:"engagement"}
     ];
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(bookingData);
+        const submissionResult = await window.submitAPI.submit();
+        if(submissionResult) {
+            navigate("/confirmation");
+        }
     }
     const nameChange = (e) => {
         dispatch({

@@ -4,7 +4,7 @@ import React from 'react';
 import Homepage from './Homepage';
 import BookingPage from './BookingPage';
 import {Routes, Route} from 'react-router-dom';
-import Confirmation from './Confirmation';
+import ConfirmedBooking from './ConfirmedBooking';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/booking-page" element={<BookingPage />} />
-        <Route path="/confirmation" element={<Confirmation />} />
+        <Route path="/confirmation" element={<ConfirmedBooking />} />
       </Routes>
     </>
   );
