@@ -4,16 +4,19 @@ const LabelNumber = (props) => {
             <label htmlFor={props.inputId}>
                 {props.labelText}
             </label>
-            <input
-            id={props.inputId}
-            type={props.inputType}
-            placeholder={props.inputPlaceholder}
-            min={props.inputMin}
-            max={props.inputMax}
-            value={props.numberValue}
-            onChange={props.handleChange}
-            aria-required={props.required}
-            />
+            <div className="number-container">
+                <input
+                id={props.inputId}
+                type={props.inputType}
+                placeholder={props.inputPlaceholder}
+                min={props.inputMin}
+                max={props.inputMax}
+                value={props.numberValue}
+                onChange={props.handleChange}
+                aria-required={props.required}
+                />
+                <span>{props.numberValue}</span>
+            </div>
         </div>
     );
 }

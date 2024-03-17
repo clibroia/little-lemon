@@ -47,6 +47,12 @@ const BookingPage = () => {
             navigate("/confirmation");
         }
     }
+    const nameBlur = (e) => {
+        dispatch({
+            type: 'nameBlur',
+            value: e.target.value
+        });
+    }
     const nameChange = (e) => {
         dispatch({
             type: 'nameChange',
@@ -165,6 +171,7 @@ const BookingPage = () => {
             times={times}
             bookingData={bookingData}
             handleSubmit={handleSubmit}
+            nameBlur={nameBlur}
             nameChange={nameChange}
             emailBlur={emailBlur}
             emailChange={emailChange}

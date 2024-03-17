@@ -360,6 +360,12 @@ footer {
 .form-fit-content {
   width: fit-content;
 }
+.number-container {
+  display: flex;
+  gap: 2vw;
+  align-items: center;
+  font-weight: 500;
+}
 .seating-button-container {
   display: flex;
   gap: 4vw;
@@ -400,6 +406,10 @@ input[type="submit"][aria-disabled="true"] {
 .res-form input[aria-invalid="true"], .res-form select[aria-invalid="true"] {
   outline: 1px solid red;
   box-shadow: 0 0 8px rgba(0,0,0,.25);
+}
+.error-message {
+  font: 400 14px 'Karla', sans-serif;
+  color: red;
 }
 
 @media screen and (max-width: 992px) {

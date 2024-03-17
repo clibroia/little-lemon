@@ -9,6 +9,7 @@ const BookingForm = ({
     times,
     bookingData,
     handleSubmit,
+    nameBlur,
     nameChange,
     emailBlur,
     emailChange,
@@ -33,8 +34,10 @@ const BookingForm = ({
                         inputId={"user-name"}
                         inputType={"text"}
                         handleChange={nameChange}
-                        inputValue={bookingData.name}
+                        handleBlur={nameBlur}
+                        inputValue={bookingData.name.value}
                         required={"true"}
+                        ariaInvalid={!bookingData.name.valid}
                         />
                         <LabelInput
                         labelText={"Email"}
@@ -75,7 +78,7 @@ const BookingForm = ({
                         divClassName={"form-label-data form-fit-content"}
                         inputId={"res-diners"}
                         labelText={"Number of Diners"}
-                        inputType={"number"}
+                        inputType={"range"}
                         inputPlaceholder={"1"}
                         inputMin={"1"}
                         inputMax={"15"}

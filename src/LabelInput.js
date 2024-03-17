@@ -1,4 +1,19 @@
 const LabelInput = (props) => {
+    const displayErrorMessage = () => {
+        switch(props.labelText) {
+            case 'Name':
+            case 'Date':
+                return 'Required';
+            case 'Email': {
+                if(props.inputValue==='') {
+                    return 'Required';
+                }
+                return 'Insert a valid email address';
+            }
+            default:
+                return '';
+        }
+    }
     const divClassName="form-label-data";
     return(
         <div className={divClassName}>
@@ -14,6 +29,7 @@ const LabelInput = (props) => {
             onBlur={props.handleBlur}
             aria-invalid={props.ariaInvalid}
             />
+            {props.ariaInvalid && <p className="error-message">{displayErrorMessage()}</p>}
         </div>
     );
 }

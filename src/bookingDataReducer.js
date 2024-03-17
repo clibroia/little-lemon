@@ -1,5 +1,5 @@
 export const bookingDataInitialState = {
-    name: '',
+    name: {value:'', valid: true},
     email: {value: '', valid: true},
     date: {value: '', valid: true},
     time: {value: '', valid: true},
@@ -12,17 +12,37 @@ export const bookingDataInitialState = {
 
 export const bookingDataReducer = (bookingData, action) => {
     switch (action.type) {
-        case 'nameChange': {
+        case 'nameBlur': {
             const newSubmitDisabled =
-                !bookingData.email.valid || bookingData.email.value==="" ||
-                !bookingData.date.valid || bookingData.date.value==="" ||
-                !bookingData.time.valid || bookingData.time.value==="--:--" ||
-                !bookingData.occasion.valid || bookingData.occasion.value==="-" ||
-                action.value==="";
+                    !bookingData.email.valid || bookingData.email.value==="" ||
+                    !bookingData.date.valid || bookingData.date.value==="" ||
+                    !bookingData.time.valid || bookingData.time.value==="--:--" ||
+                    !bookingData.occasion.valid || bookingData.occasion.value==="-" ||
+                    action.value==="";
             return({
                 ...bookingData,
-                name: action.value,
+                name: {value: action.value, valid: action.value!==""},
                 submitDisabled: newSubmitDisabled
+            });
+        }
+        case 'nameChange': {
+            const prevValid = bookingData.name.valid;
+            if(!prevValid) {
+                const newSubmitDisabled =
+                    !bookingData.email.valid || bookingData.email.value==="" ||
+                    !bookingData.date.valid || bookingData.date.value==="" ||
+                    !bookingData.time.valid || bookingData.time.value==="--:--" ||
+                    !bookingData.occasion.valid || bookingData.occasion.value==="-" ||
+                    action.value==="";
+                return({
+                    ...bookingData,
+                    name: {value: action.value, valid: action.value!==""},
+                    submitDisabled: newSubmitDisabled
+                });
+            }
+            return({
+                ...bookingData,
+                name: {value: action.value, valid: prevValid}
             });
         }
         case 'emailBlur': {

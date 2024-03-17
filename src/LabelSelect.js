@@ -1,4 +1,13 @@
 const LabelSelect = (props) => {
+    const displayErrorMessage = () => {
+        switch(props.labelText) {
+            case 'Time':
+            case 'Occasion':
+                return 'Required';
+            default:
+                return '';
+        }
+    }
     return(
         <div className={props.divClassName}>
             <label htmlFor={props.selectId}>
@@ -23,6 +32,7 @@ const LabelSelect = (props) => {
                     );
                 })}
             </select>
+            {props.ariaInvalid && <p className="error-message">{displayErrorMessage()}</p>}
         </div>
     );
 }
