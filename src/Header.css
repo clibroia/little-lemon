@@ -1,0 +1,30 @@
+.navigation-bar {
+    width: 100vw;
+    padding: min(5vw, 5vh) 20vw min(4vw, 4vh) 20vw;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2.5vw;
+  }
+  .header-logo {
+    width: 150px;
+    height: 50px;
+  }
+  .header-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4vw;
+    list-style-type: none;
+    font: 500 18px "Karla", sans-serif;
+    color: #495E57;
+  }
+
+  @media screen and (max-width: 992px) {
+    .navigation-bar {
+      padding: min(5vw, 5vh) 10vw min(4vw, 4vh) 10vw;
+      justify-content: center;
+    }
+    .header-menu {
+      justify-content: center;
+    }
+  }

@@ -1,0 +1,56 @@
+.hero-section {
+    position: relative;
+    padding-top: min(5vw, 5vh);
+    background-color: #495E57;
+}
+.hero-title, .hero-subtitle {
+    width: fit-content;
+    margin-left: 20vw;
+}
+.hero-title {
+    font: 500 64px "Markazi Text", serif;
+    color: #F4CE14;
+}
+.hero-subtitle {
+    font: 400 40px "Markazi Text", serif;
+    color: #EDEFEE;
+}
+.hero-description {
+    width: 30vw;
+    margin: min(4vw, 4vh) 0 min(10vw, 10vh) 20vw;
+    font: 500 18px "Karla", sans-serif;
+    color: #EDEFEE;
+}
+.hero-button {
+    width: 200px;
+    height: 50px;
+    margin: 0 0 3.5vh 20vw;
+    background-color: #F4CE14;
+    border-radius: 16px;
+    box-shadow: 0 4px 4px rgba(0,0,0,.25);
+    font: 500 18px "Karla", sans-serif;
+    color: #333;
+    border: none;
+}
+.welcome-image {
+    position: absolute;
+    width: 22vw;
+    height: 33vw;
+    top: 2vh;
+    right: 20vw;
+    background: center/cover url(../public/images/welcome-image.jpg);
+    border-radius: 8px;
+    box-shadow: 0 4px 4px rgba(0,0,0,.25);
+}
+
+@media screen and (max-width: 992px) {
+    .hero-title, .hero-subtitle, .hero-description, .hero-button {
+        margin-left: 10vw;
+    }
+    .welcome-image {
+      width: min(40vw, 40vh);
+      height: max(25vw, 25vh);
+      top: 15vh;
+      right: 10vw;
+    }
+}

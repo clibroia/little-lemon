@@ -1,10 +1,8 @@
-import './App.css';
-
 import React from 'react';
-import Homepage from './Homepage';
-import BookingPage from './BookingPage';
+import Homepage from './components/Homepage';
+import BookingPage from './components/BookingPage';
 import {Routes, Route} from 'react-router-dom';
-import ConfirmedBooking from './ConfirmedBooking';
+import ConfirmedBooking from './components/ConfirmedBooking';
 
 function App() {
   return (

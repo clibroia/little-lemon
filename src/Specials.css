@@ -1,0 +1,40 @@
+.highlights {
+    margin: 0 20vw 0 20vw;
+}
+.highlights-heading {
+    margin: min(22vw, 22vh) 0 min(5vw, 5vh) 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.highlights-h2 {
+    font: 700 40px "Markazi Text", serif;
+    color: #333;
+}
+.highlights-button {
+    width: 200px;
+    height: 50px;
+    border-radius: 16px;
+    background-color: #F4CE14;
+    box-shadow: 0 4px 4px rgba(0,0,0,.25);
+    font: 500 18px "Karla", sans-serif;
+    color: #333;
+    border: none;
+}
+.cards-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@media screen and (max-width: 992px) {
+    .highlights {
+      margin: 0 9vw 0 10vw;
+    }
+    .highlights-heading {
+      margin: max(5vw, 5vh) 0 max(5vw, 5vh) 0;
+    }
+    .cards-container {
+      flex-wrap: wrap;
+      gap: max(3vw, 3vh);
+    }
+}

@@ -4,7 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import BookingHero from './BookingHero';
 import BookingForm from './BookingForm';
-import { bookingDataInitialState, bookingDataReducer } from './bookingDataReducer';
+import { bookingDataInitialState, bookingDataReducer } from '../bookingDataReducer';
 import { useNavigate } from 'react-router-dom';
 
 const BookingPage = () => {

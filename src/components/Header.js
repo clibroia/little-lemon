@@ -1,5 +1,3 @@
-/*TODO - import*/
-
 import Nav from './Nav';
 
 function Header() {

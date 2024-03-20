@@ -1,0 +1,56 @@
+.card {
+    width: max(18vw, 18vh);
+    padding-bottom: max(1vw, 1vh);
+    background-color: #EDEFEE;
+    border-radius: 8px;
+    display: grid;
+    grid-template-areas: "card-image" "card-title" "card-copy" "card-cta";
+    grid-template-rows: max(12vw, 12vh) max(4vw, 4vh) 1fr 18px;
+}
+.card-image {
+    grid-area: card-image;
+    width: max(18vw, 18vh);
+    height: max(12vw, 12vh);
+    margin-bottom: 40px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.card-title {
+    grid-area: card-title;
+    margin: max(3vw, 3vh) 2vw max(2vw, 2vh) 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font: 700 18px "Karla", sans-serif;
+    color: #333;
+}
+.card-amount {
+    font: 500 16px "Karla", sans-serif;
+    color: #EE9972;
+}
+.card-copy {
+    grid-area: card-copy;
+    margin: max(2vw, 2vh) 2vw max(5vw, 5vh) 1vw;
+    font: 400 16px "Karla", sans-serif;
+    color: #333;
+}
+.card-cta {
+    grid-area: card-cta;
+    margin: 0 2vw 0 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font: 500 18px "Karla", sans-serif;
+    color: #333;
+}
+
+@media screen and (max-width: 992px) {
+    .card {
+      width: min(60vw, 60vh);
+      grid-template-rows: min(36vw, 36vh) max(4vw, 4vh) 1fr 18px;
+    }
+    .card-image {
+      width: min(60vw, 60vh);
+      height: min(36vw, 36vh);
+    }
+}
