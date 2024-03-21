@@ -1,0 +1,56 @@
+.booking-hero {
+    display: flex;
+    gap: 7vw;
+}
+.booking-hero-title {
+    width: fit-content;
+    margin-left: 20vw;
+    font: 500 64px "Markazi Text", serif;
+    color: #EDEFEE;
+}
+.booking-hero-title + .hero-description {
+    margin-top: min(8vw, 8vh);
+    padding-bottom: min(12vw, 12vh);
+}
+.booking-hero-img-container {
+    position: relative;
+    margin-top: 2vw;
+}
+.booking-hero-image:first-child {
+    width: max(15vw, 15vh);
+    height: max(17vw, 17vh);
+    position: absolute;
+    top: 8vw;
+    left: 8vw;
+    z-index: 1;
+    background: center/cover url("../../public/images/booking-image\ A.jpg");
+    border: 5px solid #FBDABB;
+    border-radius: 8px;
+    box-shadow: 0 4px 4px rgba(0,0,0,.25);
+}
+.booking-hero-image:nth-child(2) {
+    width: max(15vw, 15vh);
+    height: max(17vw, 17vh);
+    position: absolute;
+    background: center/cover url("../../public/images/booking-image\ B.jpg");
+    border: 5px solid #FBDABB;
+    border-radius: 8px;
+    box-shadow: 0 4px 4px rgba(0,0,0,.25);
+}
+
+@media screen and (max-width: 992px) {
+    .booking-hero-title {
+        margin-left: 10vw;
+    }
+    .booking-hero-img-container {
+        position: absolute;
+        top: max(12vw, 15vh);
+        left: 50vw;
+    }
+    .booking-hero-image:first-child {
+        top: 10vh;
+    }
+    .booking-hero-image:nth-child(2) {
+        left: 0;
+    }
+}

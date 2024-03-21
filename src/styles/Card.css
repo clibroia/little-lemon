@@ -3,6 +3,7 @@
     padding-bottom: max(1vw, 1vh);
     background-color: #EDEFEE;
     border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,.25);
     display: grid;
     grid-template-areas: "card-image" "card-title" "card-copy" "card-cta";
     grid-template-rows: max(12vw, 12vh) max(4vw, 4vh) 1fr 18px;

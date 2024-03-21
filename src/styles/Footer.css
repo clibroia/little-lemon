@@ -1,0 +1,42 @@
+footer {
+    padding: max(5vw, 5vh) 0 max(5vw, 5vh) 20vw;
+    background-color: #495E57;
+    display: flex;
+    gap: 9vw;
+}
+.footer-logo-container {
+    display: flex;
+    align-items: center;
+}
+.footer-heading {
+    margin-bottom: 3vw;
+    font: 700 18px "Karla", sans-serif;
+    color: #EDEFEE;
+}
+.footer-menu {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    font: 400 16px "Karla", sans-serif;
+    color: #EDEFEE;
+}
+
+@media screen and (max-width: 992px) {
+    footer {
+        padding: max(5vw, 5vh) 0 max(5vw, 5vh) 10vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        /* padding-left: 5vw; */
+        flex-direction: column;
+        /* flex-wrap: wrap; */
+    }
+    .footer-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5vw;
+    }
+}

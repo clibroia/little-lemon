@@ -1,0 +1,74 @@
+.testimonials {
+    margin-top: 10vh;
+    padding: max(3vw, 3vh) 20vw max(3vw, 3vh) 20vw;
+    background-color: #495E57;
+}
+.testimonials-h2 {
+    margin-bottom: max(1.5vw, 1.5vh);
+    text-align: center;
+    font: 700 40px "Markazi Text", serif;
+    color: #EDEFEE;
+}
+.testimonials-row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.testimonial {
+    width: max(12vw, 12vh);
+    padding: 0 max(1vw, 1vh) max(1.5vw, 1.5vh) 0;
+    display: grid;
+    grid-template-areas: "user" "photo-rating" "review";
+    grid-template-rows: max(3vw, 3vh) max(5vw, 5vh) max(10vw, 10vh);
+    background-color: #EDEFEE;
+    border-radius: 8px;
+}
+.testimonial-name {
+    grid-area: user;
+    margin: max(2vw, 2vh) 0 0 1vw;
+    font: 700 18px "Karla", sans-serif;
+    color: #333;
+}
+.testimonial-photo-rating {
+    grid-area: photo-rating;
+    margin: max(2vw, 2vh) 2vw 0 1vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font: 500 16px "Karla", sans-serif;
+    color: #EE9972;
+}
+.testimonial-photo {
+    width: max(4vw, 4vh);
+    height: max(4vw, 4vh);
+}
+.testimonial-review {
+    grid-area: review;
+    margin: max(2vw, 2vh) 1vw 0 1vw;
+    font: italic 400 16px "Karla", sans-serif;
+    color: #333;
+}
+
+@media screen and (max-width: 992px) {
+    .testimonials-row {
+        flex-wrap: wrap;
+        gap: max(2vw, 2vh);
+    }
+
+    .testimonial {
+        width: max(20vw, 20vh);
+        grid-template-rows: max(5vw, 5vh) max(7vw, 7vh) max(12vw, 12vh);
+    }
+    .testimonial-name {
+        margin: max(2vw, 2vh) 0 0 3vw;
+    }
+    .testimonial-photo-rating {
+        margin: max(2vw, 2vh) 5vw 0 3vw;
+    }
+    .testimonial-photo {
+        width: max(8vw, 8vh); height: max(8vw, 8vh);
+    }
+    .testimonial-review {
+        margin: max(3vw, 3vh) 1vw 0 3vw;
+    }
+}

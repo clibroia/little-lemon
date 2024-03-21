@@ -1,0 +1,105 @@
+.res-form {
+    width: 56vw;
+    padding: 6vw 0 4vw 20vw;
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+    font: 400 16px "Karla", sans-serif;
+    color: #333;
+}
+.res-form input, .res-form select {
+    height: max(2vw, 2vh);
+    font: 400 16px "Karla", sans-serif;
+    color: #333;
+    border-radius: 6px;
+}
+.res-form select {
+    text-align: center;
+    background-color: #EDEFEE;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: max(1vw, 1vh);
+}
+.form-label-data {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.form-res-date-time {
+    display: flex;
+    gap: 7vw;
+}
+.form-fit-content {
+    width: fit-content;
+}
+.number-container {
+    display: flex;
+    gap: max(2vw, 2vh);
+    align-items: center;
+    font-weight: 500;
+}
+.seating-button-container {
+    display: flex;
+    gap: 4vw;
+}
+.seating-button {
+    width: max(10vw, 10vh);
+    height: max(2vw, 2vh);
+    font: 400 16px "Karla", sans-serif;
+    text-align: center;
+    background-color: #EDEFEE;
+    color: #333;
+    border-radius: 6px;
+}
+.seating-button.seating-button-clicked {
+    background-color: #495E57;
+    color: #EDEFEE;
+}
+.form-label-data textarea {
+    resize: none;
+    height: max(5vw, 5vh);
+}
+.form-submit {
+    display: flex;
+    justify-content: flex-end;
+}
+input[type="submit"] {
+    height: 50px;
+    border-radius: 16px;
+    font: 500 18px "Karla", sans-serif;
+}
+input[type="submit"][aria-disabled="true"] {
+    background-color: rgba(244, 206, 20, 0.50);
+    color: rgba(51, 51, 51, 0.50);
+    box-shadow: none;
+}
+
+/*BookingForm.js -> aria-invalid*/
+.res-form input[aria-invalid="true"], .res-form select[aria-invalid="true"] {
+    outline: 1px solid red;
+    box-shadow: 0 0 8px rgba(0,0,0,.25);
+  }
+  .error-message {
+    font: 400 14px 'Karla', sans-serif;
+    color: red;
+  }
+
+@media screen and (max-width: 992px) {
+    .res-form {
+        padding-left: 10vw;
+    }
+    .res-form input, .res-form select {
+        height: max(3vw, 3vh);
+    }
+    .seating-button {
+        height: max(3vw, 3vh);
+    }
+    .form-submit {
+        justify-content: flex-start;
+    }
+    input[type="submit"] {
+        height: max(50px, 5vh);
+    }
+}

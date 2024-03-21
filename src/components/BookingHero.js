@@ -4,8 +4,8 @@ const BookingHero = () => {
             <div className="booking-hero-text">
                 <h1 className="booking-hero-title">Reserve a table</h1>
                 <p className="hero-description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed  lorem enim. Mauris egestas
-                    libero ut eros consequat, vel mattis ipsum  luctus.
+                    You are one step away from a tasty journey around the Mediterranean sea.
+                    Just fill in the form below and enjoy your meals
                 </p>
             </div>
             <div className="booking-hero-img-container">
