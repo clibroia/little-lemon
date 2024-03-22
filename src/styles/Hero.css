@@ -32,6 +32,9 @@
     color: #333;
     border: none;
 }
+.hero-button:hover {
+    cursor: pointer;
+}
 .welcome-image {
     position: absolute;
     width: 22vw;

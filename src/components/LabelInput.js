@@ -3,7 +3,10 @@ const LabelInput = (props) => {
         switch(props.labelText) {
             case 'Name':
             case 'Date':
-                return 'Required';
+                if(props.inputValue==="") {
+                    return 'Required';
+                }
+                return 'Invalid date';
             case 'Email': {
                 if(props.inputValue==='') {
                     return 'Required';

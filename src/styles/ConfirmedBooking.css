@@ -1,0 +1,19 @@
+.confirmation-main {
+    margin-bottom: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.check-container img {
+    margin-top: 10vh;
+    width: 15vw;
+}
+.confirmed-heading {
+    font: 500 64px "Markazi Text", serif;
+    color: #495E57;
+}
+.confirmed-text {
+    text-align: center;
+    font: 500 18px "Karla", sans-serif;
+    color: #333;
+}

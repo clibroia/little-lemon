@@ -81,19 +81,29 @@ export const bookingDataReducer = (bookingData, action) => {
             });
         }
         case 'dateBlur': {
+            const currentDate = new Date();
+            currentDate.setHours(0, 0, 0, 0);
+            const [year, month, day] = action.value.split("-");
+            const inputDate = new Date(year, month - 1, day);
+            inputDate.setHours(0, 0, 0, 0);
             const newSubmitDisabled =
                 bookingData.name==="" ||
                 !bookingData.email.valid || bookingData.email.value==="" ||
                 !bookingData.time.valid || bookingData.time.value==="--:--" ||
                 !bookingData.occasion.valid || bookingData.occasion.value==="-" ||
-                action.value==="";
+                action.value==="" || inputDate < currentDate;
             return({
                 ...bookingData,
-                date: {value: action.value, valid: action.value!==""},
+                date: {value: action.value, valid: action.value!=="" && inputDate>=currentDate},
                 submitDisabled: newSubmitDisabled
             });
         }
         case 'dateChange': {
+            const currentDate = new Date();
+            currentDate.setHours(0, 0, 0, 0);
+            const [year, month, day] = action.value.split("-");
+            const inputDate = new Date(year, month - 1, day);
+            inputDate.setHours(0, 0, 0, 0);
             const prevValid = bookingData.date.valid;
             if(!prevValid) {
                 const newSubmitDisabled =
@@ -101,10 +111,10 @@ export const bookingDataReducer = (bookingData, action) => {
                 !bookingData.email.valid || bookingData.email.value==="" ||
                 !bookingData.time.valid || bookingData.time.value==="--:--" ||
                 !bookingData.occasion.valid || bookingData.occasion.value==="-" ||
-                action.value==="";
+                action.value==="" || inputDate < currentDate;
                 return({
                     ...bookingData,
-                    date: {value: action.value, valid: action.value!==""},
+                    date: {value: action.value, valid: action.value!=="" && inputDate>=currentDate},
                     submitDisabled: newSubmitDisabled
                 });
             }

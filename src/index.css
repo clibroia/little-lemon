@@ -9,6 +9,7 @@
 @import url('./styles/Footer.css');
 @import url('./styles/BookingHero.css');
 @import url('./styles/BookingForm.css');
+@import url('./styles/ConfirmedBooking.css');
 
 * {
   margin: 0;

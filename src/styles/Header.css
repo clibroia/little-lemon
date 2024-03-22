@@ -10,6 +10,9 @@
     width: 150px;
     height: 50px;
   }
+  .header-logo:hover {
+    cursor: pointer;
+  }
   .header-menu {
     display: flex;
     flex-wrap: wrap;
